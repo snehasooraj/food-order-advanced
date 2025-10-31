@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* Global color palette */
+:root {
+  --primary: #f5f6f8;   /* Deep navy background */
+  --secondary: #143590; /* Royal blue (buttons) */
+  --accent: #2484a7;    /* Sky blue (hover, highlights) */
+  --dark: #1e3a8a;      /* Indigo (navbar, cards) */
+  --light: #f8fafc;     /* Soft white (text) */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--primary);
+  color: var(--dark);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.scroll-target {
+  scroll-margin-top: 90px;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #0f172a;
+  color: #f9fafb;
+}
+
+/* Global Elements */
+h1, h2, h3 {
+  color: var(--accent);
+}
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
