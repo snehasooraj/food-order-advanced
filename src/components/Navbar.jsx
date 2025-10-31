@@ -29,11 +29,10 @@ function Navbar() {
       <div className="container mx-auto flex justify-between items-center px-6 py-4">
         {/* Brand */}
         <h1 className="text-3xl font-bold tracking-wide text-white !text-white">
-  <Link to="/" className="hover:text-[var(--accent)] transition-colors duration-200">
-    Food Paradise
-  </Link>
-</h1>
-
+          <Link to="/" className="hover:text-[var(--accent)] transition-colors duration-200">
+            Food Paradise
+          </Link>
+        </h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-lg items-center">
@@ -133,15 +132,69 @@ function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`md:hidden bg-[var(--dark)] text-[var(--light)] overflow-hidden transition-all duration-300 ${
-          menuOpen ? "max-h-60" : "max-h-0"
+          menuOpen ? "max-h-96" : "max-h-0"
         }`}
       >
         <ul className="flex flex-col items-center gap-4 py-4 text-lg">
-          <li><Link to="/" className="hover:text-[var(--accent)]">Home</Link></li>
-          <li><Link to="/orders" className="hover:text-[var(--accent)]">Orders</Link></li>
-          <li><Link to="/about" className="hover:text-[var(--accent)]">About</Link></li>
-          <li><Link to="/contact" className="hover:text-[var(--accent)]">Contact</Link></li>
-          <li><Link to="/admin" className="hover:text-[var(--accent)]">Admin</Link></li>
+          <li><Link to="/" onClick={() => setMenuOpen(false)} className="hover:text-[var(--accent)]">Home</Link></li>
+          <li><Link to="/orders" onClick={() => setMenuOpen(false)} className="hover:text-[var(--accent)]">Orders</Link></li>
+          <li><Link to="/about" onClick={() => setMenuOpen(false)} className="hover:text-[var(--accent)]">About</Link></li>
+          <li><Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:text-[var(--accent)]">Contact</Link></li>
+          <li><Link to="/admin" onClick={() => setMenuOpen(false)} className="hover:text-[var(--accent)]">Admin</Link></li>
+
+          {/* Cart */}
+          <li>
+            <button
+              onClick={() => {
+                setMenuOpen(false);
+                navigate(user ? "/cart" : "/account");
+              }}
+              className="relative flex items-center gap-2"
+            >
+              <img src={assets.basket_icon} alt="Cart" className="w-6 h-6 invert" />
+              <span>Cart ({totalItems})</span>
+            </button>
+          </li>
+
+          {/* Dark Mode Toggle */}
+          <li>
+            <button
+              onClick={() => setIsDark(!isDark)}
+              className="flex items-center gap-2 p-2 hover:bg-[var(--accent)] rounded-md transition"
+            >
+              {isDark ? (
+                <>
+                  <Sun className="w-6 h-6 text-yellow-400" /> <span>Light Mode</span>
+                </>
+              ) : (
+                <>
+                  <Moon className="w-6 h-6" /> <span>Dark Mode</span>
+                </>
+              )}
+            </button>
+          </li>
+
+          {/* Login / Logout */}
+          <li>
+            {user ? (
+              <button
+                onClick={handleLogout}
+                className="text-red-400 hover:text-[var(--accent)]"
+              >
+                Logout ({user.username})
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  setMenuOpen(false);
+                  navigate("/account");
+                }}
+                className="bg-[var(--secondary)] text-white px-5 py-2 rounded-md hover:bg-[var(--accent)] transition"
+              >
+                Login
+              </button>
+            )}
+          </li>
         </ul>
       </div>
     </nav>
