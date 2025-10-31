@@ -5,14 +5,14 @@ You can easily browse food items, search for specific dishes, add them to your c
 
 ✨ Features
 
-Browse and explore food by categories
+➤ Browse and explore food by categories
 
-Search for dishes instantly
+➤ Search for dishes instantly
 
-Add or remove items from the cart
+➤ Add or remove items from the cart
 
-Smooth checkout experience
+➤ Smooth checkout experience
 
-Responsive and clean user interface
+➤ Responsive and clean user interface
 
-Developed by: Sneha Sooraj 💻
+➤ Developed by: Sneha Sooraj 💻
