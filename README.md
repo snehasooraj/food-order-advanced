@@ -15,4 +15,5 @@ You can easily browse food items, search for specific dishes, add them to your c
 
 ➤ Responsive and clean user interface
 
-➤ Developed by: Sneha Sooraj 💻
+Developed by: 
+Sneha Sooraj 💻
