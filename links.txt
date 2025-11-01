@@ -1,0 +1,2 @@
+Github link -- https://github.com/snehasooraj/food-order-advanced
+Vercel app link -- https://snehasooraj-food-ordering-miniproject.vercel.app/
